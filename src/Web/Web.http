@@ -1,0 +1,18 @@
+﻿@Web_HostAddress = https://localhost:5001
+
+### Health
+GET {{Web_HostAddress}}/health
+
+### Swagger (проверка что жив)
+GET {{Web_HostAddress}}/swagger/index.html
+
+### Create snapshot (пример)
+POST {{Web_HostAddress}}/api/blockchain-snapshots
+Content-Type: application/json
+
+{
+  "blockchain": "BTC"
+}
+
+### Get history (DESC by CreatedAt)
+GET {{Web_HostAddress}}/api/blockchain-snapshots?blockchain=BTC&page=1&pageSize=20
